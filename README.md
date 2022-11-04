@@ -13,8 +13,7 @@
 
 ## Association
 - has_many :items
-- has_many :order
-- has_one :delivery_address
+- has_many :orders
 
 # itemsテーブル
 
@@ -25,15 +24,14 @@
 | category_id        | integer    | null: false                    |
 | condition_id       | integer    | null: false                    |
 | delivery_charge_id | integer    | null: false                    |
-| sender_area_id     | integer    | null: false                    |
-| delivery_days_id   | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
+| delivery_day_id    | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 ## Association
 - belongs_to :user
 - has_one :order
-- has_one :delivery_address
 
 # ordersテーブル
 
@@ -57,11 +55,7 @@
 | address       | string     | null: false                    |
 | building_name | string     |                                |
 | phone_number  | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
-| item          | references | null: false, foreign_key: true |
 | order         | references | null: false, foreign_key: true |
 
 ## Association
-- belongs_to :user
-- belongs_to :item
 - belongs_to :order
