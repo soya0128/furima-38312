@@ -106,16 +106,4 @@ RSpec.describe User, type: :model do
     end
   end
 
-  # describe 'ユーザーログイン' do
-  #   context 'ログインができる場合' do
-  #     it 'email,passwordが一致すればログインできる' do
-  #       
-  #     end
-  #   end
-  #   context 'ログインができない場合' do
-  #     it 'email,passwordが登録された情報と一致しなければログインできない' do
-  #       @user.email = 
-  #     end
-  #   end
-  # end
 end
