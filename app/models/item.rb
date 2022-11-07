@@ -1,12 +1,12 @@
 class Item < ApplicationRecord
-  validates :image,              null: false
-  validates :name,               null: false
-  validates :text,               null: false
-  validates :category_id,        null: false
-  validates :condition_id,       null: false
-  validates :delivery_charge_id, null: false
-  validates :prefecture_id,      null: false
-  validates :delivery_day_id,    null: false
-  validates :price,              null: false
-  validates :user_id,            null: false, foreign_key: true
+  validates :image,              presence: true
+  validates :name,               presence: true
+  validates :text,               presence: true
+  validates :category_id,        presence: true
+  validates :condition_id,       presence: true
+  validates :delivery_charge_id, presence: true
+  validates :prefecture_id,      presence: true
+  validates :delivery_day_id,    presence: true
+  validates :price,              presence: true
+  validates :user_id,            presence: true
 end
