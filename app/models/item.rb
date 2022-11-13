@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  validates :image,              presence: true
   validates :name,               presence: true, length:{ maximum: 40 }
   validates :text,               presence: true, length:{ maximum: 1000 }
   validates :category_id,        presence: true, numericality: {other_than: 1}
