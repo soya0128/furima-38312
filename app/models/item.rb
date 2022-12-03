@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  validates :image,              presence: true
+  validates :images,             length: {minimum: 1, maximum: 5}
   validates :name,               presence: true, length:{ maximum: 40 }
   validates :text,               presence: true, length:{ maximum: 1000 }
   validates :category_id,        presence: true, numericality: {other_than: 1}
@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates :delivery_day_id,    presence: true, numericality: {other_than: 1}
   validates :price,              presence: true, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
   
-  has_one_attached :image
+  has_many_attached :images
   belongs_to :user
   has_one :order
   extend ActiveHash::Associations::ActiveRecordExtensions
