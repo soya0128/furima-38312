@@ -9,7 +9,7 @@ class OrderAddress
     validates :prefecture, numericality: {other_than: 1, message:"を選択してください"}
     validates :city
     validates :address
-    validates :phone_number, format:{with:/\A[0-9]{10,11}\z/, message:"はハイフンなしで入力してください"}
+    validates :phone_number, format:{with:/\A[0-9]{10,11}\z/}
     validates :token
   end
 
