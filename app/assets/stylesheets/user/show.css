@@ -1,0 +1,83 @@
+.AccountPage {
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+  margin: 0 auto;
+}
+
+.AccountPage__title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.Card__title {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  min-width: 170px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.register-btn-contents{
+  display: block;
+  text-align: center;
+}
+
+.card-register-btn{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  margin-bottom: 4vh;
+  display: block;
+  padding: 14px;
+}
+
+.Account__info {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.edit-btn {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+}
+
+.btn-contents{
+  width: 80%;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.back-to-root-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+  display: block;
+}
+
+.logout-btn {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+  display: block;
+}
+

@@ -1,0 +1,59 @@
+<%= render "shared/second-header"%>
+
+<div class="AccountPage">
+  <div class="AccountPage__title">
+    マイページ
+  </div><br>
+  <div class="Card__title">
+    カード情報
+  </div>
+  <div class="Card_info">
+    【カード番号】
+    <br>
+    <%= "**** **** ****" + @card[:last4] %>
+    <br>
+    【有効期限】
+    <br>
+    <%= @card[:exp_month] %>
+    /
+    <%= @card[:exp_year] %>
+  </div>
+  <br>
+  <div class="register-btn-contents">
+    <%= link_to "カードを登録する", new_card_path, class:"card-register-btn" %>
+  </div>
+  <br>
+  <div class="Account__info">
+    ユーザー情報
+  </div>
+  <div class="AccountPage__form">
+    <%= form_for(current_user) do |f| %>
+      <div class="FormField">
+        <div class="FormField__name">
+          <%= f.label :nickname %>
+        </div>
+        <div class="FormField__name">
+          <%= f.text_field :nickname, autofocus: true %>
+        </div>
+      </div>
+      <div class="FormField">
+        <div class="FormField__email">
+          <%= f.label :email %>
+        </div>
+        <div class="FormField__email">
+          <%= f.email_field :email %>
+        </div>
+        <br>
+      </div>
+      <%= f.submit "更新する", class:"edit-btn" %>
+    <% end %>
+    <br>
+    <div class="btn-contents">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout-btn" %>
+      <br>
+      <%= link_to "トップへ戻る", root_path, class:"back-to-root-btn" %>
+    </div>
+  </div>
+</div> 
+
+<%= render "shared/second-footer"%>
