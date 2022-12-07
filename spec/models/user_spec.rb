@@ -118,4 +118,29 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe 'ユーザーマイページの情報編集機能' do
+    context 'ユーザー情報が更新できる場合' do
+      it '新しいnickname,emailが入力されていれば保存できる' do
+        @user.save
+        @user.nickname = 'sample2'
+        @user.email = 'sample2@com'
+        expect(@user).to be_valid
+      end
+    end
+    context 'ユーザー情報が更新できない場合' do
+      it 'nicknameが空だと更新できない' do
+        @user.save
+        @user.nickname = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+      end
+      it 'emailが空だと更新できない' do
+        @user.save
+        @user.email = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+      end
+    end
+  end
+
 end
