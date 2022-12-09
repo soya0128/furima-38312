@@ -7,18 +7,20 @@ class UsersController < ApplicationController
 
     customer = Payjp::Customer.retrieve(card.customer_token)
     @card = customer.cards.first
+    @user =  User.find(current_user.id)
   end
 
   def update
-    if current_user.update(user_params)
+    user = User.find(current_user.id)
+    if user.update(user_params)
       redirect_to root_path
     else
-      redirect_to action: "show"
+      redirect_to action:'show'
     end
   end
 
   private
   def user_params
-    params.require(:user).permit(:nickname, :last_name, :first_name, :last_name_furigana, :first_name_furigana, :birthdate)
+    params.require(:user).permit(:nickname, :email)
   end
 end
