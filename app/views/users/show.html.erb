@@ -4,25 +4,6 @@
   <div class="AccountPage__title">
     マイページ
   </div><br>
-  <div class="Card__title">
-    カード情報
-  </div>
-  <div class="Card_info">
-    【カード番号】
-    <br>
-    <%= "**** **** ****" + @card[:last4] %>
-    <br>
-    【有効期限】
-    <br>
-    <%= @card[:exp_month] %>
-    /
-    <%= @card[:exp_year] %>
-  </div>
-  <br>
-  <div class="register-btn-contents">
-    <%= link_to "カードを登録する", new_card_path, class:"card-register-btn" %>
-  </div>
-  <br>
 
   <div class="Account__info">
     ユーザー情報
