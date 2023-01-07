@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   resources :items do
     resources :orders, only:[:index, :create]
   end
-  resources :cards, only: [:new, :create]
 end
