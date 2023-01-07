@@ -11,8 +11,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    redirect_to new_card_path and return unless current_user.cards.present?
-    
     @order_address = OrderAddress.new(order_params)
     if @order_address.valid?
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
